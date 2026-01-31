@@ -85,26 +85,8 @@ h2 {
 /* CARD */
 .card {
   background: #1a1a1a;
-  padding: 25px;
-  border-radius: 15px;
-  text-align: center;
-  transition: transform 0.3s;
-}
-.card:hover {
-  transform: translateY(-10px);
-}
-.card p {
-  color: #bbb;
-  font-size: 0.95rem;
-}
-.portfolio video {
-  width: 100%;
-  border-radius: 10px;
-}
-.card {
-  background: #1a1a1a;
   padding: 15px;
-  border-radius: 15px;
+  border-radius: 16px;
 }
 
 .card video {
@@ -113,17 +95,13 @@ h2 {
   background: black;
 }
 
-/* 🔥 Vertical (9:16) fix */
+/* ✅ ONLY first two videos */
 .card.vertical video {
   aspect-ratio: 9 / 16;
   object-fit: cover;
 }
 
-/* 🔹 Horizontal (16:9) */
-.card.horizontal video {
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
-  }
+/* ❌ DO NOT put aspect-ratio on all videos */
 /* SKILLS */
 .skill {
   margin-bottom: 30px;
@@ -313,17 +291,31 @@ footer {
   <div class="portfolio">
     <h2>My Work</h2>
     <div class="portfolio-grid">
-      <div class="card vertical">
-  <video controls playsinline preload="metadata">
-    <source src="video1.mp4" type="video/mp4">
-  </video>
-  <p>phonk Edit</p>
-      </div>
-      <div class="card"><video controls src="video2.mp4"></video><p>Documentary Video</p></div>
-      <div class="card"><video controls src=""></video><p>Documentary Video</p></div>
-    </div>
+
+  <!-- First video (9:16) -->
+  <div class="card vertical">
+    <video controls preload="metadata">
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+    <p>Phonk Edit</p>
   </div>
-</section>
+
+  <!-- Second video (9:16) -->
+  <div class="card vertical">
+    <video controls preload="metadata">
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+    <p>Documentary Video</p>
+  </div>
+
+  <!-- Third video (NORMAL 16:9) -->
+  <div class="card">
+    <video controls preload="metadata">
+      <source src="video3.mp4" type="video/mp4">
+    </video>
+    <p>Documentary Video</p>
+  </div>
+    </section>
 
 <section id="charges">
   <div class="services">
