@@ -101,7 +101,29 @@ h2 {
   width: 100%;
   border-radius: 10px;
 }
+.card {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 15px;
+}
 
+.card video {
+  width: 100%;
+  border-radius: 12px;
+  background: black;
+}
+
+/* 🔥 Vertical (9:16) fix */
+.card.vertical video {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+/* 🔹 Horizontal (16:9) */
+.card.horizontal video {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  }
 /* SKILLS */
 .skill {
   margin-bottom: 30px;
