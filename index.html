@@ -463,44 +463,6 @@ body{
   <p>© 2026 | Video Editor Portfolio</p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-// EmailJS Init
-(function(){
-  emailjs.init("86VVLWQKqMJjuFQ33");
-})();
-
-// Send message
-document.getElementById('contactForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  emailjs.sendForm('service_ek7gcpf','template_3kro18s', this).then(()=>{
-    alert('Message sent successfully!');
-    this.reset();
-  }, ()=>{
-    alert('Failed to send message. Please try again.');
-  });
-});
-// Menu toggle
-function toggleMenu(){
-  const menu = document.getElementById('menuDropdown');
-  menu.style.display = menu.style.display==='block'?'none':'block';
-}
-
-// Click outside menu
-document.addEventListener('click', e=>{
-  const menu = document.getElementById('menuDropdown');
-  if(!e.target.closest('.menu')) menu.style.display='none';
-});
-
-// Scroll fade animation
-window.addEventListener('scroll', ()=>{
-  document.querySelectorAll('section').forEach(s=>{
-    const top = s.getBoundingClientRect().top;
-    const trigger = window.innerHeight*0.85;
-    s.classList.toggle('show', top<trigger);
-  });
-});
-</script>
 
 </body>
 </html>
