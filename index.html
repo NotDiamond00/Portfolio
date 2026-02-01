@@ -416,14 +416,25 @@ body{
 <body>
 
 <section id="contact">
-<section class="contact">
-  <h1>Contact Me</h1>
-<form id="contactForm">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Write your message..." required></textarea>
-<button type="submit" class="send-btn">Send Message</button>
-</form>
+  <section class="contact">
+    <h1>Contact Me</h1>
+
+    <form 
+      id="contactForm"
+      action="https://formspree.io/f/mnjznvrd"
+      method="POST"
+    >
+      <input type="text" name="name" placeholder="Your Name" required>
+
+      <input type="email" name="email" placeholder="Your Email" required>
+
+      <textarea name="message" placeholder="Write your message..." required></textarea>
+
+      <button type="submit" class="send-btn">Send Message</button>
+    </form>
+
+  </section>
+</section>
 
 
   <!-- SOCIAL LINKS -->
