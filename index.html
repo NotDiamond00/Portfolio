@@ -419,19 +419,26 @@ body{
   <section class="contact">
     <h1>Contact Me</h1>
 
-    <form 
-      id="contactForm"
-      action="https://formspree.io/f/mnjznvrd"
-      method="POST"
-    >
-      <input type="text" name="name" placeholder="Your Name" required>
+<form id="form">
 
-      <input type="email" name="email" placeholder="Your Email" required>
+  <div class="field">
+    <label for="name">Name</label>
+    <input type="text" name="from_name" id="name" required>
+  </div>
 
-      <textarea name="message" placeholder="Write your message..." required></textarea>
+  <div class="field">
+    <label for="email">Email</label>
+    <input type="email" name="reply_to" id="email" required>
+  </div>
 
-      <button type="submit" class="send-btn">Send Message</button>
-    </form>
+  <div class="field">
+    <label for="message">Message</label>
+    <textarea name="message" id="message" required></textarea>
+  </div>
+
+  <input type="submit" id="button" value="Send Email">
+
+</form>
 
   </section>
 </section>
@@ -463,6 +470,38 @@ body{
   <p>© 2026 | Video Editor Portfolio</p>
 </footer>
 
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+(function () {
+  emailjs.init("86VVLW0KqMJjuFQ33"); // PUBLIC KEY
+})();
+
+const btn = document.getElementById("button");
+
+document.getElementById("form")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    btn.value = "Sending...";
+
+    emailjs.sendForm(
+      "service_xxxxxx",   // 🔴 apna SERVICE ID
+      "template_xxxxxx",  // 🔴 apna TEMPLATE ID
+      this
+    ).then(
+      () => {
+        alert("Message sent successfully ✅");
+        btn.value = "Send Email";
+        this.reset();
+      },
+      (error) => {
+        alert("Failed to send message ❌");
+        btn.value = "Send Email";
+      }
+    );
+  });
+  </script>
 
 </body>
 </html>
