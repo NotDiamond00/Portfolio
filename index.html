@@ -472,36 +472,5 @@ body{
 
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 
-  <script>
-(function () {
-  emailjs.init("86VVLW0KqMJjuFQ33"); // PUBLIC KEY
-})();
-
-const btn = document.getElementById("button");
-
-document.getElementById("form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    btn.value = "Sending...";
-
-    emailjs.sendForm(
-      "service_xxxxxx",   // 🔴 apna SERVICE ID
-      "template_xxxxxx",  // 🔴 apna TEMPLATE ID
-      this
-    ).then(
-      () => {
-        alert("Message sent successfully ✅");
-        btn.value = "Send Email";
-        this.reset();
-      },
-      (error) => {
-        alert("Failed to send message ❌");
-        btn.value = "Send Email";
-      }
-    );
-  });
-  </script>
-
 </body>
 </html>
